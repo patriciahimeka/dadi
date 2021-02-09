@@ -6,20 +6,16 @@ import matplotlib
 from datetime import datetime
 import Models_3D
 '''
-usage: python dadi_3D_03_third_optimizations.py
-
+Optimization functions used in Wepfer et al., "The oceanographic isolation of the Ogasawara Islands and genetic divergence in a reef-building coral".
+usage: python dadi_3D_02_second_optimizations_C-D-O.py
 Requires the Models_3D.py script to be in same working directory.
-This is where all the population model functions are stored. This is written for the
-models specifically found in that script. 
 
-Script will perform optimizations from multiple starting points using a
-1-fold perturbed set of random starting values for parameters. The output for
-each model is a tab-delimited text file which can be opened and sorted to
-find the best scoring replicate. 
+Script taken from Dan Portik's pipeline: https://github.com/dportik/dadi_pipeline/blob/master/README.md#V  (version 2 for python 2.7, 2018)
+CITE: https://github.com/dportik/dadi_pipeline/blob/master/README.md#V
 
-Dan Portik
-daniel.portik@uta.edu
-April 2017
+Patricia Wepfer
+August 2018
+
 '''
 t_begin = datetime.now()
 
@@ -394,7 +390,7 @@ def Three_Pop_Models(pts, fs, outfile, reps, y, model_name, params):
 
 #************** "split_nomig"
 # 6 Values
-split_nomig_params = [2.1127,0.9016,7.4879,0.8309,0.0737,0.5939]
+#split_nomig_params = [2.1127,0.9016,7.4879,0.8309,0.0737,0.5939]
 
 #************** "split_symmig_all"
 # 10 Values
@@ -402,7 +398,7 @@ split_symmig_all_params = [0.6047,1.8755,2.7982,0.1294,1.1115,0.4329,1.9536,0.59
 
 #************** "split_symmig_adjacent"
 # 9 Values
-split_symmig_adjacent_params = [2.911,6.4277,4.4721,1.6473,3.1932,0.2043,0.2706,6.2816,1.7949]
+#split_symmig_adjacent_params = [2.911,6.4277,4.4721,1.6473,3.1932,0.2043,0.2706,6.2816,1.7949]
 
 #************** "split_asymmig_all"
 # 13 Values
@@ -410,7 +406,7 @@ split_asymmig_all_params = [0.2849,	0.3374,	0.545,	0.8678,	1.9271,	2.0997,	1.200
 
 #************** "starsplit"
 # 9 Values
-starsplit_params = [0.3041,	0.5704,	1.0414,	0.9484,	0.4721,	1.108,	0.6374,	3.7644,	0.5398]
+#starsplit_params = [0.3041,	0.5704,	1.0414,	0.9484,	0.4721,	1.108,	0.6374,	3.7644,	0.5398]
 
 
 #**************
@@ -434,15 +430,7 @@ maxiter = int(100)
 #Three_Pop_Models(pts, fs, outfile, reps, maxiter, "starsplit", starsplit_params)
 Three_Pop_Models(pts, fs, outfile, reps, maxiter, "split_asymmig_all", split_asymmig_all_params)
 
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "split_nomig", split_nomig_params)
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "split_symmig_all", split_symmig_all_params)
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "split_symmig_adjacent", split_symmig_adjacent_params)
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "refugia_1", refugia_1_params)
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "refugia_2", refugia_2_params)
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "refugia_3", refugia_3_params)
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "ancmig_3", ancmig_3_params)
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "ancmig_2", ancmig_2_params)
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "ancmig_1", ancmig_1_params)
+
 
 
 
