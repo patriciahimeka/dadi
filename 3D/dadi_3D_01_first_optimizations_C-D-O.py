@@ -6,25 +6,14 @@ import matplotlib
 from datetime import datetime
 import Models_3D
 '''
+
+Optimization functions used in Wepfer et al., "The oceanographic isolation of the Ogasawara Islands and genetic divergence in a reef-building coral".
+
+Script taken from Dan Portik's pipeline: https://github.com/dportik/dadi_pipeline/blob/master/README.md#V  (version 2 for python 2.7, 2018)
+CITE: https://github.com/dportik/dadi_pipeline/blob/master/README.md#V
+
 usage: python dadi_3D_01_first_optimizations_C-D-O.py
-
 Requires the Models_3D.py script to be in same working directory.
-This is where all the population model functions are stored. This is written for the
-models specifically found in that script. 
-
-Script will perform optimizations from multiple starting points using a
-3-fold perturbed set of random starting values for parameters. The output for
-each model is a tab-delimited text file which can be opened and sorted to
-find the best scoring replicate. The parameter values from this run should
-be used as the starting values in the next script, "dadi_3D_02_second_optimizations.py".
-The order of output parameters matches the input order, so they can be copied
-and pasted into the next script within the appropriate list. 
-
-Requires user to edit sections of code marked with #**************
-
-You'll absolutely need to provide the path to your SNPs input file
-along with your specific projections and population labels. 
-
 
 ############################################
 Written for Python 2.7
@@ -35,9 +24,8 @@ Python modules required:
 -dadi
 ############################################
 
-Dan Portik
-daniel.portik@uta.edu
-April 2017
+Patricia Wepfer
+August 2018
 '''
 t_begin = datetime.now()
 
