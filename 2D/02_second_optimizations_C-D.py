@@ -8,7 +8,7 @@ import Optimize_Functions
 from datetime import datetime
 
 '''
-Run first round of parameter optimizations for populations 'Ogasawara' (C) and 'Daito (D).
+Run second round of parameter optimizations for populations 'Ogasawara' (C) and 'Daito (D).
 
 usage: python 02_second_optimizations-C-D.py
 Requires the Models_2D.py and Optimize_Functions.py scripts to be in same working directory. 
