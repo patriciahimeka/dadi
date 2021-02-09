@@ -8,17 +8,15 @@ import Optimize_Functions
 from datetime import datetime
 
 '''
-usage: python dadi_2D_02_second_optimizations.py
+Run second round of parameter optimizations for populations 'Daito' (D) and 'Ryukyu' (O).
 
+usage: python 02_second_optimizations-C-D.py
 Requires the Models_2D.py and Optimize_Functions.py scripts to be in same working directory. 
-This is where all the population models and functions are stored for this script. 
 
-Script will perform optimizations from multiple starting points using a
-2-fold perturbed set of USER SELECTED starting values for parameters. 
+Adapted from Dan Protik: https://github.com/dportik/dadi_pipeline
 
-Dan Portik
-daniel.portik@uta.edu -> danielportik@email.arizona.edu
-October 2017
+Patricia Wepfer
+August 2018
 '''
 #keep track of start time
 t_begin = datetime.now()
@@ -26,7 +24,7 @@ t_begin = datetime.now()
 #===========================================================================
 #**************
 #pop_ids is a list which should match the populations headers of your SNPs file columns
-pop_ids=["Ogasawara", "Ryukyu"]
+pop_ids=["Daito", "Ryukyu"]
 #projection sizes, in ALLELES not individuals
 proj_1 = [16,26]
 
@@ -45,8 +43,7 @@ print "sample sizes", fs_1.sample_sizes
 print "Segregating sites",fs_1.S(), '\n', '\n'
 
 #======================================================================================
-# Now prepare to run the optimization round 2 function, which is defined in the 
-# script 'Optimize_Functions.py'.
+# Give parameters from round 1
 
 #"no_mig"
 #3 Values
@@ -64,25 +61,6 @@ asym_mig_params = [0.4587,	1.3089,	4.5929,	4.1985,	1.0622]
 #5 Values
 anc_sym_mig_params = [1.5358,	1.5817,	2.185,	1.7732,	0.0377]
 
-#"anc_asym_mig"
-#6 Values
-anc_asym_mig_params = [1.2483,	3.9629,	4.518,	0.5015,	4.1635,	0.0882]
-
-#"sec_contact_sym_mig"
-#5 Values
-sec_contact_sym_mig_params = [2.6136,	4.1536,	1.0742,	1.2434,	7.1761]
-
-#"sec_contact_asym_mig"
-#6 Values
-sec_contact_asym_mig_params = [0.3176,	1.7005,	10.9231,	1.353,	1.7466,	0.3526]
-
-#sym_mig_two_epoch
-#6	values
-sym_mig_twoepoch_params =	[2.5245,	4.4661,	1.7164,	0.8577,	0.1647,	8.2925]
-
-#asym_mig_two_epoch
-#8	values
-asym_mig_twoepoch_params =[1.1702,	2.2964,	3.933,	3.1242,	2.5145,	1.5807,	2.1291,	2.7903]
 
 #======================================================================================
 #These can be left alone, unless you want more searches:
@@ -106,23 +84,6 @@ Optimize_Functions.Optimize_Round2(pts, fs, outfile, reps, maxiter, "sym_mig", s
 # Split into two populations, with continuous asymmetric migration.
 Optimize_Functions.Optimize_Round2(pts, fs, outfile, reps, maxiter, "asym_mig", asym_mig_params)
 
-# Ancient symmetric migration
-Optimize_Functions.Optimize_Round2(pts, fs, outfile, reps, maxiter, "anc_sym_mig", anc_sym_mig_params)
-
-#Ancient asymetric migration
-Optimize_Functions.Optimize_Round2(pts, fs, outfile, reps, maxiter, "anc_asym_mig", anc_asym_mig_params)
-
-# Secondary contact symm. migration
-Optimize_Functions.Optimize_Round2(pts, fs, outfile, reps, maxiter, "sec_contact_sym_mig", sec_contact_sym_mig_params)
-
-# Secondary contact asym migration
-Optimize_Functions.Optimize_Round2(pts, fs, outfile, reps, maxiter, "sec_contact_asym_mig", sec_contact_asym_mig_params)
-
-# Two epoch model sym mig
-Optimize_Functions.Optimize_Round2(pts, fs, outfile, reps, maxiter, "sym_mig_twoepoch", sym_mig_twoepoch_params)
-
-# Two epoch asym mig
-Optimize_Functions.Optimize_Round2(pts, fs, outfile, reps, maxiter, "asym_mig_twoepoch", asym_mig_twoepoch_params)
 
 #===========================================================================
 #clock the amount of time to complete the script
