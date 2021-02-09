@@ -8,9 +8,9 @@ import Optimize_Functions
 from datetime import datetime
 
 '''
-Run second round of parameter optimizations for populations 'Ogasawara' (C) and 'Daito (D).
+Run first round of parameter optimizations for populations 'Ogasawara' (C) and 'Daito (D).
 
-usage: python 02_second_optimizations-C-D.py
+usage: python 01_first_optimizations-C-D.py
 Requires the Models_2D.py and Optimize_Functions.py scripts to be in same working directory. 
 
 Adapted from Dan Protik: https://github.com/dportik/dadi_pipeline
