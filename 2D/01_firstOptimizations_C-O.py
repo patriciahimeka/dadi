@@ -8,9 +8,12 @@ import Optimize_Functions
 from datetime import datetime
 
 '''
-usage: python dadi_2D_01_first_optimizations.py
+Perform first round of parameter search for the demographic model between populations 'Ogasawara' and 'Ryukyu' (O).
 
+usage: python 01_first_optimizations-C-O.py
 Requires the Models_2D.py and Optimize_Functions.py scripts to be in same working directory. 
+
+Adapted from Dan Portik: https://github.com/dportik/dadi_pipeline
 
 Patricia Wepfer
 August 2018
