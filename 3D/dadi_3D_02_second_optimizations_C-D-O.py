@@ -6,8 +6,6 @@ import matplotlib
 from datetime import datetime
 import Models_3D
 '''
-
-
 Optimization functions used in Wepfer et al., "The oceanographic isolation of the Ogasawara Islands and genetic divergence in a reef-building coral".
 
 Script taken from Dan Portik's pipeline: https://github.com/dportik/dadi_pipeline/blob/master/README.md#V  (version 2 for python 2.7, 2018)
