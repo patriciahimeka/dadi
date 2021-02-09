@@ -27,7 +27,7 @@ t_begin = datetime.now()
 
 #**************
 #pop_ids is a list which should match the populations headers of your SNPs file columns
-pop_ids=["O", "D"]
+pop_ids=["C", "D"]
 #projection sizes, in ALLELES not individuals
 proj_1 = [26,16]
 
