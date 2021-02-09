@@ -6,7 +6,7 @@ import matplotlib
 from datetime import datetime
 import Models_3D
 '''
-usage: python dadi_3D_01_first_optimizations.py
+usage: python dadi_3D_01_first_optimizations_C-D-O.py
 
 Requires the Models_3D.py script to be in same working directory.
 This is where all the population model functions are stored. This is written for the
@@ -411,16 +411,7 @@ def Three_Pop_Models(pts, fs, outfile, reps, y, model_name):
 
     
         
-#======================================================================================
-# Finally, execute model with appropriate arguments
-# Three_Pop_Models(pts, fs, outfile, reps, maxiter, model_name):
-# pts = grid choice (list of three numbers, ex. [20,30,40]
-# fs = spectrum object name
-# outfile = prefix for output naming (will result in "[prefix]_[model_name]_optimized_round1.txt")
-# reps = integer to control number of replicates, ex. 10
-# maxiter = max number of iterations per optimization step (not intuitive! see dadi user group)
-# model_name = from this list ["split_nomig", "split_symmig_all", "split_symmig_adjacent", "refugia_1",
-#        "refugia_2", "refugia_3", "ancmig_3", "ancmig_2", "ancmig_1"]
+#====================================================================================
 
 #**************
 #Input some of the basic reusable arguments here
@@ -431,27 +422,12 @@ reps = int(20)
 maxiter = int(15)
 
 #**************
-# Here it is set up to call each model one by one sequentially, but this will take a very long time.
-# I recommend blocking out all models except one (use a hash or delete), make several
-# copies of the script and execute one model version for every core you have available.
-# It will greatly speed up these steps, and sometimes if extrapolations fail the
-# script will crash too.
-# There are 20 models to test here. 
 
 #Models from the Models_3D.py script
 #Three_Pop_Models(pts, fs, outfile, reps, maxiter, "split_nomig")
 #Three_Pop_Models(pts, fs, outfile, reps, maxiter, "split_symmig_all")
 Three_Pop_Models(pts, fs, outfile, reps, maxiter, "split_asymmig_all")
 #Three_Pop_Models(pts, fs, outfile, reps, maxiter, "starsplit")
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "split_symmig_adjacent")
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "refugia_1")
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "refugia_2")
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "refugia_3")
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "ancmig_3")
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "ancmig_2")
-#Three_Pop_Models(pts, fs, outfile, reps, maxiter, "ancmig_1")
-
-
 
 #===========================================================================
 #clock it!
