@@ -4,6 +4,15 @@ import pylab
 import Models_2D
 import matplotlib.pyplot as plt
 
+'''
+Optimization functions used in Wepfer et al., "The oceanographic isolation of the Ogasawara Islands and genetic divergence in a reef-building coral".
+
+Script taken from Dan Portik's pipeline: https://github.com/dportik/dadi_pipeline/blob/master/README.md#V
+please cite: https://github.com/dportik/dadi_pipeline/blob/master/README.md#V
+
+Patricia Wepfer
+August 2018
+'''
 #======================================================================================
 #======================================================================================
 #======================================================================================
